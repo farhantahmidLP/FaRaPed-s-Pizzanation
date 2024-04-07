@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='thanks.css') }}">
+        <meta name="theme-color" content="#b35427">
+    </head>
+    <body>
+        <div class="page">
+            <p>Thanks for your order!</p>
+            <div class="tokenTxt">
+                <p>Your token number is <br></p>
+            </div>
+            <div class="tokenBox">
+                {{orderNo}}
+            </div>
+            <a class="button" href="/">Go back to home</a>
+        </div>
+    </body>
+</html> 

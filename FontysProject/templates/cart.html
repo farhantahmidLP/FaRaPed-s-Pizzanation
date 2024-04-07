@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">
+        <meta name="theme-color" content="#b35427">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="sElement">
+                    <a href="/">
+                        <img src="{{ url_for('static', filename='home_logo.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+                <div class="sElement">
+                    <a href="/menu">
+                        <img src="{{ url_for('static', filename='menu.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+                <div class="sElement cart">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='shopping_cart.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="top_holder">
+                    <div class ="name">
+                        M&L Pizzaria
+                    </div>
+                    <div class ="page_name">
+                        Cart
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="order_view">
+                        
+                        <!-- {% for list1_element in list1 %}
+                            <p>{{ list1_element }} </p>
+                        {% endfor %} -->
+                        {% for list1_element in list1 %}
+                            <p>{{ prnt }} </p>
+                        {% endfor %}
+                        <p>{{ msg }} </p>
+                        <!-- <p>{{dictionary["pName1"]}}</p> -->
+                        <script>
+
+                        </script>
+                        {% if pVal2 == pVal3 %}
+                        <p hidden>Name : {{pVal1}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal2}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal3}}</p>
+                        {% else %}
+                        <p>Name : {{pVal1}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal2}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal3}}</p>
+                        {% endif %}
+
+                        {% if pVal5 == pVal6 %}
+                        <p hidden>Name : {{pVal4}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal5}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal6}}</p>
+                        {% else %}
+                        <p>Name : {{pVal4}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal5}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal6}}</p>
+                        {% endif %}
+                        
+                        {% if pVal8 == pVal9 %}
+                        <p hidden>Name : {{pVal7}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal8}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal9}}</p>
+                        {% else %}
+                        <p>Name : {{pVal7}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal8}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal9}}</p>
+                        {% endif %}
+
+                        {% if pVal11 == pVal12 %}
+                        <p hidden>Name : {{pVal10}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal11}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal12}}</p>
+                        {% else %}
+                        <p>Name : {{pVal10}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal11}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal12}}</p>
+                        {% endif %}
+
+                        {% if pVal14 == pVal15 %}
+                        <p hidden>Name : {{pVal13}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal14}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal15}}</p>
+                        {% else %}
+                        <p>Name : {{pVal13}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal14}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal15}}</p>
+                        {% endif %}
+
+                        {%if pVal17 == pVal18 %}
+                        <p hidden>Name : {{pVal16}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal17}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal18}}</p>
+                        {% else %}
+                        <p>Name : {{pVal16}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal17}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal18}}</p>
+                        {% endif %}
+
+                        {% if pVal20 == pVal21 %}
+                        <p hidden>Name : {{pVal19}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal20}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal21}}</p>
+                        {% else %}
+                        <p>Name : {{pVal19}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal20}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal21}}</p>
+                        {% endif %}
+
+                        {% if pVal23 == pVal24 %}
+                        <p hidden>Name : {{pVal22}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal23}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal24}}</p>
+                        {% else %}
+                        <p>Name : {{pVal22}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal23}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal24}}</p>
+                        {% endif %}
+
+                        {% if pVal26 == pVal27 %}
+                        <p hidden>Name : {{pVal25}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal26}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal27}}</p>
+                        {% else %}
+                        <p>Name : {{pVal25}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal26}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal27}}</p>
+                        {% endif %}
+
+                        {% if pVal29 == pVal30 %}
+                        <p hidden>Name : {{pVal28}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal29}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal30}}</p>
+                        {% else %}
+                        <p>Name : {{pVal28}} &emsp;&emsp;&emsp;&emsp; Amount : {{pVal28}} &emsp;&emsp;&emsp;&emsp; Price : {{pVal30}}</p>
+                        {% endif %}
+
+                        <div class="total">
+                            <p><br>Total : {{total}} &euro;</p>
+                        </div>
+
+                    </div>
+                    <div class="payment"> 
+                        <h3>&emsp;&emsp;&emsp; Payment</h3>
+                        <div class="visa">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='visa.png') }}" alt="" width="80px" height="60px">
+                            </a>
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='paypal.png') }}" alt="" width="80px" height="60px">
+                            </a>
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='ideal.png') }}" alt="" width="50px" height="50px">
+                            </a>
+                        </div>
+                        <P class="details">In order to improve our service, we have stopped taking cash. We only accept cards, which is faster, easier and smooth. You can pay with your VISA, PayPal or iDEAL cards. Please bring your card near the payment machine and press the 'Pay' button.</P>
+                    </div>
+                    
+                </div>
+                <div class="footer_note">
+                        <!-- <button id="pay">Pay</button> -->
+                        <form action="/final">
+                            <input type="submit" id="pay" value="Pay" class="button">
+                        </form>
+                        <form action="/delete">
+                            <input type="submit" id="delete" value="Delete" class="button">
+                        </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> 

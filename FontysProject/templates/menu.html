@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+        <meta name="theme-color" content="#b35427">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="sidebar">
+
+                <div class="sElement">
+                    <a href="/">
+                        <img src="{{ url_for('static', filename='home_logo.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+
+                <div class="sElement menu">
+                    <a href="/menu">
+                        <img src="{{ url_for('static', filename='menu.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+
+                <div class="sElement">
+                    <a href="/cart">
+                        <img src="{{ url_for('static', filename='shopping_cart.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="top_holder">
+                    <div class ="name">
+                        M&L Pizzaria
+                    </div>
+
+                    <div class ="page_name">
+                        Menu
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="one box" onclick="addcart()">
+                        <div class="text_box">
+                            <h4>Pizza Pepperoni &nbsp; &nbsp; &nbsp; &nbsp; &euro; 3.00</h4>
+                            The classic American pizza with rich cheese in an Italian crust, topped with special sauce and Pepperoni!
+                        </div>
+                        <img src="{{ url_for('static', filename='Pepperoni-Pizza.png') }}" alt="" width="130px" height="130px" >
+                    </div>
+    
+                    <div class="two box">
+                        <div class="text_box">
+                            <h4>Pizza BBQ Chicken &nbsp; &nbsp; &nbsp; &nbsp; &euro; 5.00</h4>
+                            The Californian pizza with smoked chicken in a crunchy crust, topped with jalapeno and mozzarella cheese!
+                        </div>
+                        <img src="{{ url_for('static', filename='bbqchicken-pizza.png') }}" alt="" width="130px" height="130px" >
+                    </div>
+    
+                    <div class="three box">
+                        <div class="text_box">
+                            <h4>Pizza Margherita &nbsp; &nbsp; &nbsp; &nbsp; &euro; 2.00</h4>
+                            The classic Italian pizza with extra cheese in a thin Italian crust, topped with special sauce and basil!
+                        </div>
+                        <img src="{{ url_for('static', filename='Margherita-Pizza.png') }}" alt="" width="130px" height="130px" >
+                    </div>
+                    <div class="four box">
+                        <div class="text_box">
+                            <h4>Pizza Salami &nbsp; &nbsp; &nbsp; &nbsp; &euro; 5.00</h4>
+                            The classic Italian pizza with salami in a thin Italian crust, topped with basil!
+                        </div>
+                        <img src="{{ url_for('static', filename='salami.png') }}" alt="" width="130px" height="130px" >
+                    </div>
+                    <div class="five box">
+                        <div class="text_box">
+                            <h4>Pizza Meatlovers &nbsp; &nbsp; &nbsp; &nbsp; &euro; 6.00</h4>
+                            The classic Italian pizza with pepporoni, onions in a thin Italian crust, topped with special sauce and basil!
+                        </div>
+                        <img src="{{ url_for('static', filename='meatlovers.png') }}" alt="" width="130px" height="130px" >
+                    </div>
+                    <div class="six box">
+                        <div class="text_box">
+                            <h4>Pizza Vegan &nbsp; &nbsp; &nbsp; &nbsp; &euro; 4.00</h4>
+                            The classic Italian pizza with extra cheese in a thin Italian crust, topped with special sauce, basil and it is 100%!
+                        </div>
+                        <img src="{{ url_for('static', filename='Margherita-Pizza.png') }}" alt="" width="130px" height="130px" >
+                    </div>
+                </div>
+                <form action="menu1" method="post" class="form">
+                    Pizza : <select name="pizza" id="pizza" onchange="selectOption()" class="border">
+                        <option value="Pepperoni" >Pepperoni</option>
+                        <option value="Margherita">Margherita</option>
+                        <option value="Meatlovers">Meatlovers</option>
+                        <option value="BBQchicken">BBQ Chicken</option>
+                        <option value="Salami">Salami</option>
+                        <option value="Vegan">Vegan</option>
+                    </select>
+                    &emsp;&emsp;&emsp; Quantity : <select name="number" id="number" onchange="selectOption()" class="border">
+                        <option value=0 >0</option>
+                        <option value=1 >1</option>
+                        <option value=2 >2</option>
+                        <option value=3 >3</option>
+                        <option value=4 >4</option>
+                        <option value=5 >5</option>
+                    </select>
+                    <select name="price" id="price" type="hidden" class="price">
+                        <option value=3 >1</option>
+                        <option value=2 >2</option>
+                        <option value=6 >3</option>
+                        <option value=5 >4</option>
+                        <option value=5 >5</option>
+                        <option value=4 >6</option>
+                    </select>
+                    &emsp;&emsp;&emsp; Price : <span id = "result" name="result"> 0 </span> &euro;
+                    &emsp;&emsp;&emsp; <input type="submit" value="Add to cart" class="button">
+                </form>
+            </div>
+        </div>
+        <script>
+            function byId(id){
+                return document.getElementById(id)
+            }
+            function selectOption()
+            {
+              byId("price").selectedIndex=byId("pizza").selectedIndex
+              multipliedBy()
+            }
+            function multipliedBy()
+            {
+              num1 = document.getElementById(
+                "number").value;
+              num2=document.getElementById(
+                "price").value;
+              result=document.getElementById(
+                "result").innerHTML = num1*num2;
+            }
+        </script>
+    </body>
+</html> 

@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+        <meta name="theme-color" content="#b35427">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <div class="sElement home">
+                        <a href="/index">
+                            <img src="{{ url_for('static', filename='home_logo.png') }}" alt="" width="60px" height="60px">
+                        </a>
+                </div>
+                <div class="sElement menu">
+                    <a href="/menu">
+                        <img src="{{ url_for('static', filename='menu.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+                <div class="sElement cart">
+                    <a href="/cart">
+                        <img src="{{ url_for('static', filename='shopping_cart.png') }}" alt="" width="60px" height="60px">
+                    </a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="top_holder">
+                    <div class ="name">
+                        M&L Pizzaria
+                    </div>
+                    <div class ="location">
+                        43 Eindhoven Centrum,<br>Netherlands
+                    </div>
+                </div>
+                <div class="home_text_first">
+                    <h2>The only pizzaria you need!<h2>
+                </div>
+                <div class="home_text">
+                    <h2>A typical family-run Italian Pizzaria</h2>
+                    <p>This restaurant is run by two brothers who share their love for making pizza.
+                    We started experimenting with our own pizza's since we were 12 and now we want the world to experience the joy
+                    we get to experience when eating our pizza's!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> 

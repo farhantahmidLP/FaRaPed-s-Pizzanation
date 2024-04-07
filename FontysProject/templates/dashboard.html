@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">
+        <meta name="theme-color" content="#b35427">
+    </head>
+    <body>
+        <div class="main_kitchen">
+            <h3 class="title">Orders</h3>   
+            <table border=0 class="table border">  
+            <thead>  
+            <td>Earned</td>  
+            <td>Profit</td>  
+            </thead> 
+            {% for row in rows %}  
+            <tr>  
+            <td>{{row["Earned"]}}</td>  
+            <td>{{row["Profit"]}}</td>
+            </tr>  
+            {% endfor %} 
+        </div>
+    </body>
+</html>
